@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B5855FBD1E4A7587009694FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FBC1E4A7587009694FB /* AppDelegate.swift */; };
-		B5855FBF1E4A7587009694FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FBE1E4A7587009694FB /* ViewController.swift */; };
+		B5855FBF1E4A7587009694FB /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FBE1E4A7587009694FB /* LandingViewController.swift */; };
 		B5855FC21E4A7587009694FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5855FC01E4A7587009694FB /* Main.storyboard */; };
 		B5855FC41E4A7587009694FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5855FC31E4A7587009694FB /* Assets.xcassets */; };
 		B5855FC71E4A7587009694FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5855FC51E4A7587009694FB /* LaunchScreen.storyboard */; };
@@ -18,12 +18,15 @@
 		B5855FD71E4A7C7D009694FB /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FD61E4A7C7D009694FB /* ImagePickerView.swift */; };
 		B5855FDA1E4A8A4C009694FB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FD91E4A8A4C009694FB /* ImageCollectionViewCell.swift */; };
 		B5855FDC1E4A9BC5009694FB /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FDB1E4A9BC5009694FB /* InitialView.swift */; };
+		B5855FE01E4AD2F6009694FB /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FDF1E4AD2F6009694FB /* VideoView.swift */; };
+		B5855FE21E4BABDA009694FB /* VideoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FE11E4BABDA009694FB /* VideoConverter.swift */; };
+		B5855FE41E4BF8B2009694FB /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5855FE31E4BF8B2009694FB /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B5855FB91E4A7587009694FB /* Memories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5855FBC1E4A7587009694FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5855FBE1E4A7587009694FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5855FBE1E4A7587009694FB /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		B5855FC11E4A7587009694FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5855FC31E4A7587009694FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5855FC61E4A7587009694FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +37,9 @@
 		B5855FD61E4A7C7D009694FB /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		B5855FD91E4A8A4C009694FB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5855FDB1E4A9BC5009694FB /* InitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		B5855FDF1E4AD2F6009694FB /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		B5855FE11E4BABDA009694FB /* VideoConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoConverter.swift; sourceTree = "<group>"; };
+		B5855FE31E4BF8B2009694FB /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				B5855FCE1E4A7595009694FB /* User.swift */,
+				B5855FE11E4BABDA009694FB /* VideoConverter.swift */,
 				B5855FD11E4A760A009694FB /* Slideshow.swift */,
 			);
 			name = Models;
@@ -90,7 +97,8 @@
 		B5855FD31E4A7698009694FB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B5855FBE1E4A7587009694FB /* ViewController.swift */,
+				B5855FBE1E4A7587009694FB /* LandingViewController.swift */,
+				B5855FE31E4BF8B2009694FB /* MovieViewController.swift */,
 				B5855FD41E4A7816009694FB /* SelectedImagesCollectionViewController.swift */,
 			);
 			name = Controllers;
@@ -102,6 +110,7 @@
 				B5855FD61E4A7C7D009694FB /* ImagePickerView.swift */,
 				B5855FDB1E4A9BC5009694FB /* InitialView.swift */,
 				B5855FD91E4A8A4C009694FB /* ImageCollectionViewCell.swift */,
+				B5855FDF1E4AD2F6009694FB /* VideoView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,10 +190,13 @@
 			files = (
 				B5855FD21E4A760A009694FB /* Slideshow.swift in Sources */,
 				B5855FDC1E4A9BC5009694FB /* InitialView.swift in Sources */,
-				B5855FBF1E4A7587009694FB /* ViewController.swift in Sources */,
+				B5855FE41E4BF8B2009694FB /* MovieViewController.swift in Sources */,
+				B5855FBF1E4A7587009694FB /* LandingViewController.swift in Sources */,
 				B5855FD51E4A7816009694FB /* SelectedImagesCollectionViewController.swift in Sources */,
+				B5855FE21E4BABDA009694FB /* VideoConverter.swift in Sources */,
 				B5855FDA1E4A8A4C009694FB /* ImageCollectionViewCell.swift in Sources */,
 				B5855FBD1E4A7587009694FB /* AppDelegate.swift in Sources */,
+				B5855FE01E4AD2F6009694FB /* VideoView.swift in Sources */,
 				B5855FD71E4A7C7D009694FB /* ImagePickerView.swift in Sources */,
 				B5855FCF1E4A7595009694FB /* User.swift in Sources */,
 			);

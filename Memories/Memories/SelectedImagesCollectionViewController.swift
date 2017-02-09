@@ -45,7 +45,7 @@ class SelectedImagesCollectionViewController: UICollectionViewController, UIColl
     }
     
     func nextStep() {
-        // segue to view to add music if want
+        performSegue(withIdentifier: "viewVideo", sender: self)
     }
     
     func configCellLayout() {
@@ -150,3 +150,5 @@ class SelectedImagesCollectionViewController: UICollectionViewController, UIColl
      */
     
 }
+
+
