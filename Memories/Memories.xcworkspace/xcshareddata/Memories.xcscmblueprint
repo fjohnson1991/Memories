@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "15533F8F4770449A3F9674EE925EBED624F4F435",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "180B7C2FA5FCF0154D9EDE1262E510428BFDE810" : 9223372036854775807,
+    "15533F8F4770449A3F9674EE925EBED624F4F435" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AA0A2B76-141A-478D-89A8-838A26BF1AAF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "180B7C2FA5FCF0154D9EDE1262E510428BFDE810" : "",
+    "15533F8F4770449A3F9674EE925EBED624F4F435" : "Memories\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Memories",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Memories\/Memories.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:fjohnson1991\/Memories.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "15533F8F4770449A3F9674EE925EBED624F4F435"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:fjohnson1991\/GetSneaks.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "180B7C2FA5FCF0154D9EDE1262E510428BFDE810"
+    }
+  ]
+}
