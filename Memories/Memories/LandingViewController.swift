@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LandingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,6 @@ class ViewController: UIViewController {
         
     // MARK: - Actions
     func configLayout() {
-        // Remove notification observer
-        NotificationCenter.default.removeObserver(self, name: Notification.Name("finished-image-selection"), object: nil)
-        
         // Config view
         guard let navHeight = self.navigationController?.navigationBar.frame.height else { print("Error calc nav height in initail view"); return }
         let initialView = InitialView()
