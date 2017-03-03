@@ -15,6 +15,7 @@ class VideoView: UIView {
     
     var videoWriter: AVAssetWriter?
     let outputSize = CGSize(width: 1920, height: 1080)
+    var urlString: String!
     
     weak var delegate: PopulateSlideshow? {
         didSet {
@@ -23,7 +24,8 @@ class VideoView: UIView {
             VideoConverter.convertToVideo(from: imagesSelected, progress: { (progress) in
             }) { (success) in
                 OperationQueue.main.addOperation {
-                    self.configView(url: success.absoluteString)
+                    self.urlString = success.absoluteString
+                    self.configView(url: self.urlString)
                 }
             }
         }
@@ -37,7 +39,7 @@ class VideoView: UIView {
     
     private func configView(url: String) {
         //MARK: Movie config
-        guard let url: URL = URL(string: url) else { return }
+        guard let url: URL = URL(string: urlString) else { return }
         player = AVPlayer(url: url)
         controller.player = player
         controller.view.frame = self.bounds

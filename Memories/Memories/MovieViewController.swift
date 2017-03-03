@@ -7,22 +7,20 @@
 //
 
 import UIKit
+import FBSDKShareKit
 
 protocol PopulateSlideshow: class {
     func getImages() -> [UIImage]
 }
 
 class MovieViewController: UIViewController, PopulateSlideshow {
+    
+    let videoView = VideoView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func configView() {
@@ -30,7 +28,6 @@ class MovieViewController: UIViewController, PopulateSlideshow {
         NotificationCenter.default.removeObserver(self, name: Notification.Name("finished-image-selection"), object: nil)
         
         guard let navHeight = self.navigationController?.navigationBar.frame.height else { print("Error calc nav height in initail view"); return }
-        let videoView = VideoView()
         self.view.addSubview(videoView)
         videoView.translatesAutoresizingMaskIntoConstraints = false
         videoView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: navHeight).isActive = true
@@ -44,7 +41,13 @@ class MovieViewController: UIViewController, PopulateSlideshow {
     }
     
     func postVideo() {
-        
+        let video: FBSDKShareVideo = FBSDKShareVideo()
+        let content: FBSDKShareVideoContent = FBSDKShareVideoContent()
+        video.videoURL = Slideshow.sharedInstance.videoURL
+        print("VIDEO URL \(Slideshow.sharedInstance.videoURL)")
+        content.video = video
+//        content.contentDescription = "LOCATION FROM MAPKIT)"
+        FBSDKShareDialog.show(from: self, with: content, delegate: self)
     }
 
     /*
@@ -62,5 +65,20 @@ class MovieViewController: UIViewController, PopulateSlideshow {
 extension MovieViewController {
     func getImages() -> [UIImage] {
         return Slideshow.sharedInstance.images
+    }
+}
+
+// MARK: - Handle FBSDKSharingDelegate protocol
+extension MovieViewController: FBSDKSharingDelegate {
+    func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable : Any]!) {
+        print("RESULTS: \(results)")
+    }
+    
+    func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) {
+        print("ERROR: \(error)")
+    }
+    
+    func sharerDidCancel(_ sharer: FBSDKSharing!) {
+        print("sharerDidCancel")
     }
 }

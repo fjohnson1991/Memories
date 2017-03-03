@@ -33,11 +33,6 @@ class SelectedImagesCollectionViewController: UICollectionViewController, UIColl
         configCellLayout()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Actions
     func configNavigationBar() {
         self.navigationItem.title = "Finalize Image Order"
@@ -68,7 +63,6 @@ class SelectedImagesCollectionViewController: UICollectionViewController, UIColl
         return 1
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return Slideshow.sharedInstance.images.count
@@ -76,9 +70,7 @@ class SelectedImagesCollectionViewController: UICollectionViewController, UIColl
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
-        
         cell.cellImageView.image = Slideshow.sharedInstance.images[indexPath.item]
-        
         return cell
     }
     

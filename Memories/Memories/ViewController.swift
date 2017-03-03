@@ -8,33 +8,27 @@
 
 import UIKit
 
-class LandingViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Memories"
+        configNavigationBar()
         NotificationCenter.default.addObserver(self, selector: #selector(dismissImagePickerViewAndDisplayImageCollectionView), name: Notification.Name("finished-image-selection"), object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name("success-FB-login"), object: nil)
-        configLayout()
     }
     
-    lazy var imageCollectionView = UICollectionView()
     lazy var imagePickerView: ImagePickerView = {
         return ImagePickerView()
     }()
-        
+    
+    lazy var imageCollectionView: UICollectionView = {
+        return UICollectionView()
+    }()
+    
     // MARK: - Actions
-    func configLayout() {
-        // Config view
-        guard let navHeight = self.navigationController?.navigationBar.frame.height else { print("Error calc nav height in initail view"); return }
-        let initialView = InitialView()
-        self.view.addSubview(initialView)
-        initialView.translatesAutoresizingMaskIntoConstraints = false
-        initialView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: navHeight).isActive = true
-        initialView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
-        initialView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
-        initialView.selectImagesButton.addTarget(self, action: #selector(selectImagesButtonPressed), for: .touchUpInside)
+    func configNavigationBar() {
+        self.navigationItem.title = "Welcome"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select memories", style: .plain, target: self, action: #selector(selectImagesButtonPressed))
     }
     
     func selectImagesButtonPressed() {

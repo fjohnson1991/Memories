@@ -12,9 +12,12 @@ import FBSDKLoginKit
 
 class LoginView: UIView, FBSDKLoginButtonDelegate {
 
+    lazy var loginButton: FBSDKLoginButton = {
+        return FBSDKLoginButton()
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print("VIEW LOADED")
         loginButton.delegate = self
         configLayout()
     }
@@ -22,10 +25,6 @@ class LoginView: UIView, FBSDKLoginButtonDelegate {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    lazy var loginButton: FBSDKLoginButton = {
-       return FBSDKLoginButton()
-    }()
     
     func configLayout() {
         self.addSubview(loginButton)
@@ -40,9 +39,7 @@ class LoginView: UIView, FBSDKLoginButtonDelegate {
         } else if result.isCancelled {
                 print("Cancelled")
         } else {
-            if result.grantedPermissions.contains("email") {
-                NotificationCenter.default.post(name: Notification.Name("success-FB-login"), object: nil)
-            }
+            NotificationCenter.default.post(name: Notification.Name("success-FB-login"), object: nil)
         }
     }
     
