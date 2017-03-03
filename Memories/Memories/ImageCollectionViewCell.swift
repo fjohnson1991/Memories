@@ -10,6 +10,10 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
     
+    lazy var cellImageView: UIImageView = {
+        return UIImageView()
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         print("config cell")
@@ -20,10 +24,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-    
-    lazy var cellImageView: UIImageView = {
-       return UIImageView()
-    }()
     
     private func configCell() {
         cellImageView.contentMode = .scaleAspectFill

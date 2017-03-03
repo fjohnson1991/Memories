@@ -15,4 +15,5 @@ class Slideshow {
     
     var images = [UIImage]()
     var datePosted = Date()
+    var videoURL: URL!
 }

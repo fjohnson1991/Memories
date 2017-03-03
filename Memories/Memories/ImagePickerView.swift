@@ -11,7 +11,10 @@ import UIKit
 class ImagePickerView: UIView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var completedSelection = false
-    
+    lazy var imagePicker: UIImagePickerController = {
+        return UIImagePickerController()
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         print("image picker config called")
@@ -23,10 +26,6 @@ class ImagePickerView: UIView, UIImagePickerControllerDelegate, UINavigationCont
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var imagePicker: UIImagePickerController = {
-       return UIImagePickerController()
-    }()
-    
     private func handleSelectImages() {
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
@@ -35,8 +34,12 @@ class ImagePickerView: UIView, UIImagePickerControllerDelegate, UINavigationCont
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
             Slideshow.sharedInstance.images.append(editedImage)
+            let value = info["UIImagePickerControllerMediaURL"] as? URL
+            print("VIDEO URL IN IMAGEP \(value)")
         } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             Slideshow.sharedInstance.images.append(originalImage)
+            let value = info[UIImagePickerControllerMediaURL] as? URL
+            print("VIDEO URL IN IMAGEP \(value)")
         }
         NotificationCenter.default.post(name: Notification.Name("finished-image-selection"), object: nil)
     }

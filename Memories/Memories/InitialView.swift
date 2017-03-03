@@ -10,16 +10,6 @@ import UIKit
 
 class InitialView: UIView {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configLayout()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.text = "Welcome to Memories!"
@@ -47,6 +37,16 @@ class InitialView: UIView {
         button.setTitleColor(UIColor.black, for: .normal)
         return button
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configLayout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private func configLayout() {
         // Welcome label config
